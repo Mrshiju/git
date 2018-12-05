@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+                    学习功能： 快速排序的思想，递归思想
+                    author:  Lisa于2018-5-27
+                    */
+        // var quiteSort = function (arr) {
+        //     var newarr = []; //定义一个新数组
+        //     var arrLeft = []; //存放在左边的数组
+        //     var arrRight = []; //存放在右边的数组
+        //     var arrMid = arr.splice(Math.floor(arr.length / 2), 1); //找到中间的判断基准
+        //     if (arr.length <= 1) { //传入的数组长度小于1时，直接返回
+        //         return arr;
+        //     }
+        //     for (var i = 0; i < arr.length; i++) {
+        //         if (arr[i] < arrMid) { //比基准的小的数放在左边
+        //             arrLeft.push(arr[i]);
+        //         }
+        //         if (arr[i] > arrMid) { //比基准的大的数放在右边
+        //             arrRight.push(arr[i]);
+        //         }
+        //     }
+        //     newarr = quiteSort(arrLeft).concat(arrMid, quiteSort(arrRight)); //采用递归的思想，不断对左右的数字进行排序
+        //     return newarr;
+        // }
+
+        // var arrtest = [1, 7, 2, 9, 4, 8];
+        // console.log(quiteSort(arrtest));
+        function quickSort(arr) {
+            if (arr.length <= 1) {
+                return arr // 如果数组长度小于或等于1，则直接返回数组
+            }
+            var num = Math.floor(arr.length / 2); // 找到数组中间的索引，如果是浮点数，则向下取整
+            var centerVal = arr.splice(num, 1); // 找到数组中间索引的值
+            var left = [];
+            var right = [];
+            for (var i = 0; i < arr.length; i++) {
+                if (arr[i] < centerVal) {
+                    left.push(arr[i]) // 基准点左边的数放到左边数组
+                } else {
+                    right.push(arr[i]) // 基准点右边的数放到右边数组
+                }
+            }
+            // 利用concat拼接数组，并调用quickSort方法
+            return  quickSort(left).concat([centerVal], quickSort(right));
+            console.log(quickSort(left).concat([centerVal], quickSort(right)));
+        }
+        console.log(quickSort([12, 4654, 389798, 313, 453, 15, 16, 43]))
+    </script>
+
+</body>
+
+</html>
