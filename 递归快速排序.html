@@ -11,20 +11,20 @@
 <body>
     <script>
         /*
-                    学习功能： 快速排序的思想，递归思想
-                    author:  Lisa于2018-5-27
-                    这个是最快的排序方式  还有其他的
+                                    学习功能： 快速排序的思想，递归思想
+                                    author:  Lisa于2018-5-27
+                                    这个是最快的排序方式  还有其他的
 
 
-                    更新
+                                    更新
 
 
-                    有更细
+                                    有更细
 
 
 
-                    如何  是还
-                    */
+                                    如何  是还
+                                    */
         // var quiteSort = function (arr) {
         //     var newarr = []; //定义一个新数组
         //     var arrLeft = []; //存放在左边的数组
@@ -63,10 +63,11 @@
                 }
             }
             // 利用concat拼接数组，并调用quickSort方法
-            return  quickSort(left).concat([centerVal], quickSort(right));
+            return quickSort(left).concat([centerVal], quickSort(right));
             console.log(quickSort(left).concat([centerVal], quickSort(right)));
         }
-        console.log(quickSort([12, 4654, 389798, 313, 453, 15, 16, 43]))
+        console.log(quickSort([12, 4654, 389798, 313, 453, 15, 16, 43]));
+        console.log('2019.8.2xinznen');
     </script>
 
 </body>
